@@ -1,0 +1,120 @@
+@import "./../../styles/variables.scss";
+
+.container {
+    position: relative;
+    height: 100vh;
+    min-height: 800px;
+    margin: 0 auto;
+}
+
+.video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba($dark, 0.3);
+    padding-top: $headerHeight;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__content {
+        margin: 0 1.5rem;
+        background: rgba($dark, 0.6);
+        backdrop-filter: blur(2px);
+        padding: $spacing-lg;
+        border-radius: $borderRadius;
+        text-align: left;
+        width: 1000px;
+        display: flex;
+        flex-direction: column;
+        letter-spacing: $letterSpacing;
+        text-transform: uppercase;
+
+        @include breakpoint(md) {
+            text-align: center;
+        }
+
+        &__title {
+            font-size: 2.4rem;
+            color: $white;
+            font-weight: 700;
+            margin-bottom: $spacing-sm;
+
+            @include breakpoint(sm) {
+                font-size: 3rem;
+            }
+            @include breakpoint(md) {
+                font-size: 3.8rem;
+            }
+        }
+
+        &__tagline {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: $light;
+            font-style: italic;
+            margin-bottom: $spacing-md;
+
+            @include breakpoint(sm) {
+                font-size: 1.8rem;
+            }
+            @include breakpoint(md) {
+                font-size: 2rem;
+            }
+        }
+
+        &__description {
+            text-transform: capitalize;
+            color: $light;
+            width: 100%;
+            font-size: 1rem;
+            margin-bottom: $spacing-lg;
+            line-height: 20px;
+
+            @include breakpoint(sm) {
+                width: 80%;
+                font-size: 1.1rem;
+            }
+            @include breakpoint(md) {
+                width: 60%;
+                margin: 0 auto $spacing-lg auto;
+            }
+        }
+
+        &__cta {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            button {
+                width: 100%;
+            }
+            button:not(:last-child) {
+                margin-bottom: $spacing-sm;
+            }
+
+            @include breakpoint(md) {
+                align-items: center;
+                button {
+                    width: auto;
+                }
+                margin: 0 auto;
+                flex-direction: row;
+                button:not(:last-child) {
+                    margin-bottom: 0;
+                    margin-right: $spacing-sm;
+                }
+            }
+        }
+    }
+}

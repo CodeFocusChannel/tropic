@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,700&display=swap");
+// fonts
+$lato: "Lato", sans-serif;
+
+// color
+$light: #dbe6ed;
+$light2: #efe9e6;
+$lightLine: #dbe6ed;
+
+$dark: #0f1515;
+$dark2: #08332f;
+$darkLine: #055449;
+
+$aqua: #229b91;
+$white: #fff;
+$black: #030502;
+
+// border-radius
+$borderRadius: 12px;
+
+// letter spacing
+$letterSpacing: 0.4px;
+
+// spacing
+$spacing-sm: 12px;
+$spacing-md: 24px;
+$spacing-lg: 32px;
+$spacing-xl: 64px;
+
+// heights
+$headerHeight: 90px;
+
+// box shadow
+$boxShadow: 0 1px 1px rgba(0, 0, 0, 0.25), 0 2px 2px rgba(0, 0, 0, 0.2),
+    0 4px 4px rgba(0, 0, 0, 0.15), 0 8px 8px rgba(0, 0, 0, 0.1), 0 16px 16px rgba(0, 0, 0, 0.05);
+
+// breakpoints
+@mixin breakpoint($point) {
+    @if $point == xl {
+        // 1120px
+        @media (min-width: 70em) {
+            @content;
+        }
+    } @else if $point == lg {
+        // 1024px
+        @media (min-width: 64em) {
+            @content;
+        }
+    } @else if $point == md {
+        // 768px
+        @media (min-width: 48em) {
+            @content;
+        }
+    } @else if $point == md-only {
+        // 767px
+        @media (max-width: 767px) {
+            @content;
+        }
+    } @else if $point == sm {
+        // 600px
+        @media (min-width: 37.5em) {
+            @content;
+        }
+    } @else if $point == sm-only {
+        @media (max-width: 599px) {
+            @content;
+        }
+    }
+}

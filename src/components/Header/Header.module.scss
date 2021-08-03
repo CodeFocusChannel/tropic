@@ -1,0 +1,61 @@
+@import "./../../styles/variables.scss";
+
+.header {
+    height: $headerHeight;
+    padding: 0 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    background: rgba($dark, 0.9);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    transition: all 0.5s ease;
+
+    @include breakpoint(md) {
+        padding: 0 3rem;
+    }
+
+    &__menu {
+        @include breakpoint(md) {
+            display: none;
+        }
+        &__toggle {
+            color: $white;
+            position: relative;
+            z-index: 10;
+            cursor: pointer;
+            svg {
+                font-size: 2rem;
+            }
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+        .menu {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0px;
+            bottom: 0px;
+            right: 0px;
+            padding: 3rem;
+            width: 70vw;
+            max-width: 400px;
+            height: 100vh;
+            outline: 0;
+            background: $dark;
+            z-index: 9;
+            transform: translateX(100vw);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .show {
+            transform: translateX(0vw);
+            opacity: 1;
+        }
+    }
+}

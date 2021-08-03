@@ -1,0 +1,16 @@
+@import "./../../styles/variables.scss";
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: $white;
+
+    span {
+        font-size: 2rem;
+        color: $white;
+        font-weight: 900;
+        letter-spacing: $letterSpacing;
+        margin-left: $spacing-sm;
+    }
+}
