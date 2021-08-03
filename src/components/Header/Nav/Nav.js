@@ -5,7 +5,6 @@ import Button from "../../../UI/Button/Button";
 import classes from "./Nav.module.scss";
 
 const Nav = ({ isMenu, menuToggle }) => {
-    console.log(isMenu);
     return (
         <nav className={isMenu ? classes.menu__nav : classes.nav}>
             <ul>

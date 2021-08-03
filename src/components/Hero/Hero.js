@@ -30,7 +30,7 @@ const Hero = ({ isDynmic, children }) => {
     return (
         <div className={classes.container}>
             <video
-                autoPlay={true}
+                autoPlay={false}
                 muted
                 loop
                 className={classes.video}
